@@ -19,6 +19,10 @@ var MobilePOS;
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
 
+            //document.getElementById("deviceName").innerHTML = "Device :" + device.name;
+            //document.getElementById("devicePlatform").innerHTML = "Platform: " + device.platform;
+            //document.getElementById("deviceModel").innerHTML = "Model: " + device.model;
+            // navigator.splashscreen.show();
             document.getElementById("scanBtn").addEventListener("click", scanAndShow);
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         }
@@ -27,11 +31,12 @@ var MobilePOS;
             cordova.plugins.barcodeScanner.scan(function (result) {
                 // wrapping in a timeout so the dialog doesn't free the app
                 setTimeout(function () {
-                    //alert("We got a barcode\n" + "Result: " + result.text + "\n" + "Format: " + result.format + "\n" + "Cancelled:" + result.cancelled);
-                    if (result.cancelled === false) {
+                    //alert("We have a barcode\n" + "Result: " + result.text + "\n" + "Format: " + result.format + "\n" + "Cancelled:" + result.cancelled);
+                    if ((result.cancelled == false) || (result.cancelled == 0)) {
                         scannedBarcodes.push(result.text);
 
-                        cordova.plugins.vibrate(1000);
+                        //only works in android. iPad has no vibration
+                        navigator.notification.vibrate(1000);
 
                         if (document.getElementById(result.text)) {
                             document.getElementById(result.text).style.background = '#92B9DD';
@@ -39,9 +44,9 @@ var MobilePOS;
 
                             var notficationMsg = result.text + " added to your cart!";
                             notificationAlert(notficationMsg, "Success");
-                        } else {
-                            notificationAlert("No Matching Product Found", "Failure");
                         }
+                    } else {
+                        notificationAlert("Scanning Cancelled!", "Info");
                     }
                 }, 0);
             }, function (error) {

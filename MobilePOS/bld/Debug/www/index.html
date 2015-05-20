@@ -58,47 +58,22 @@
         <div id="itemsInCart"></div>
         <product-list></product-list>
     </main>
+
+    <div>
+        <span id="deviceName"></span>
+        <span id="devicePlatform"></span>
+        <span id="deviceModel"></span>
+    </div>
+
     <!-- build:js(app/) ../../scripts/main.min.js -->
     <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="scripts/require.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/load-products.js"></script>
 
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
     <script src="scripts/index.js"></script>
-
-
-    <!-- endbuild -->
-    <script>
-        $(function () {
-            $(".search-syle").autocomplete({
-                source: function (request, response) {
-                    $.ajax({
-                        url: "res/data/products.json",
-                        dataType: "json",
-                        data: { term: request.term },
-                        success: function (data) {
-                            response($.map(data, function (item) {
-                                return {
-                                    label: item.brand,
-                                    style: item.style
-                                };
-                            }));
-                        }
-                    });
-
-                },
-                minLength: 3,
-                select: function (event, ui) {
-                    log(ui.item ?
-                      "Selected: " + ui.item.value + " aka " + ui.item.id :
-                      "Nothing selected, input was " + this.value);
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>
