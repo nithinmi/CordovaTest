@@ -1,0 +1,562 @@
+[
+  {  
+    "brand":"Dream Monstar",
+    "style":"Bodycon dress",
+    "color":"Goldenrod",
+    "price":"$157.73",
+    "image":"08173_RD5619_m.jpg",
+    "barcode":"274112736-0"
+  },
+  {  
+    "brand":"Black By Geng",
+    "style":"Wrap skirt dress",
+    "color":"Red",
+    "price":"$188.95",
+    "image":"22511_NA6814_m.jpg",
+    "barcode":"455858013-4"
+  },
+  {  
+    "brand":"Fate",
+    "style":"Bodycon dress",
+    "color":"Teal",
+    "price":"$232.11",
+    "image":"41752_BL8133_m.jpg",
+    "barcode":"152403328-6"
+  },
+  {  
+    "brand":"Embody Denim",
+    "style":"Fitted dress",
+    "color":"Orange",
+    "price":"$240.57",
+    "image":"66737_GY6529_m.jpg",
+    "barcode":"730489449-0"
+  },
+  {  
+    "brand":"Harlow",
+    "style":"Fitted dress",
+    "color":"Purple",
+    "price":"$218.69",
+    "image":"03446_RD6160_m.jpg",
+    "barcode":"119907371-7"
+  },
+  {  
+    "brand":"Cooper St",
+    "style":"Fitted dress",
+    "color":"Puce",
+    "price":"$131.25",
+    "image":"65251_BL7442_m.jpg",
+    "barcode":"857938901-1"
+  },
+  {  
+    "brand":"Black By Geng",
+    "style":"Fitted dress",
+    "color":"Pink",
+    "price":"$143.66",
+    "image":"07199_BK0001_m.jpg",
+    "barcode":"991175695-5"
+  },
+  {  
+    "brand":"Cameo Collective",
+    "style":"Laced midi dress",
+    "color":"Fuscia",
+    "price":"$190.48",
+    "image":"07210_WD9684_m.jpg",
+    "barcode":"983573328-7"
+  },
+  {  
+    "brand":"By Weave",
+    "style":"Draped lux dress",
+    "color":"Pink",
+    "price":"$113.07",
+    "image":"04948_BL8133_m.jpg",
+    "barcode":"234528756-X"
+  },
+  {  
+    "brand":"Decjuba",
+    "style":"Mesh stripe fit and flare dress",
+    "color":"Turquoise",
+    "price":"$131.11",
+    "image":"08578_BK0001_m.jpg",
+    "barcode":"996508677-X"
+  },
+  {  
+    "brand":"Finders Keepers",
+    "style":"Cocktail dress",
+    "color":"Goldenrod",
+    "price":"$143.76",
+    "image":"07450_WO0921_m.jpg",
+    "barcode":"874035687-6"
+  },
+  {  
+    "brand":"Casa Kuma",
+    "style":"Mesh stripe fit and flare dress",
+    "color":"Mauv",
+    "price":"$240.28",
+    "image":"12167_OR5631_m.jpg",
+    "barcode":"734098551-4"
+  },
+  {  
+    "brand":"D-ID",
+    "style":"Bodycon dress",
+    "color":"Indigo",
+    "price":"$171.18",
+    "image":"07458_PK5695_m.jpg",
+    "barcode":"374731377-9"
+  },
+  {  
+    "brand":"Cameo Collective",
+    "style":"Shirt dress",
+    "color":"Pink",
+    "price":"$199.94",
+    "image":"08577_BK0001_m.jpg",
+    "barcode":"141692096-X"
+  },
+  {  
+    "brand":"Coco Ribbon",
+    "style":"Shirt dress",
+    "color":"Maroon",
+    "price":"$164.13",
+    "image":"06246_BL7491_m.jpg",
+    "barcode":"744446419-7"
+  },
+  {  
+    "brand":"Finery London",
+    "style":"Mesh insert body-con dress",
+    "color":"Aquamarine",
+    "price":"$147.60",
+    "image":"02982_BL6669_m.jpg",
+    "barcode":"042722317-2"
+  },
+  {  
+    "brand":"Cheap Monday",
+    "style":"Cocktail dress",
+    "color":"Indigo",
+    "price":"$178.03",
+    "image":"24155_BK0001_m.jpg",
+    "barcode":"794295173-1"
+  },
+  {  
+    "brand":"By Weave",
+    "style":"Party dress",
+    "color":"Goldenrod",
+    "price":"$238.27",
+    "image":"04171_WP0658_m.jpg",
+    "barcode":"213698150-1"
+  },
+  {  
+    "brand":"Dorothy Perkins",
+    "style":"Low back flare dress",
+    "color":"Red",
+    "price":"$163.15",
+    "image":"28841_BR6390_m.jpg",
+    "barcode":"309463620-9"
+  },
+  {  
+    "brand":"First Base",
+    "style":"Fitted dress",
+    "color":"Purple",
+    "price":"$231.17",
+    "image":"04171_WP0658_m.jpg",
+    "barcode":"586287559-X"
+  },
+  {  
+    "brand":"Godwin Charli",
+    "style":"Party dress",
+    "color":"Violet",
+    "price":"$100.31",
+    "image":"07199_BK0001_m.jpg",
+    "barcode":"862603612-4"
+  },
+  {  
+    "brand":"Bless'Ed Are The Meek",
+    "style":"Bodycon dress",
+    "color":"Blue",
+    "price":"$110.91",
+    "image":"06815_WO2090_m.jpg",
+    "barcode":"687922426-1"
+  },
+  {  
+    "brand":"Bless'Ed Are The Meek",
+    "style":"Bodycon dress",
+    "color":"Purple",
+    "price":"$146.79",
+    "image":"07454_GY6397_m.jpg",
+    "barcode":"149917722-4"
+  },
+  {  
+    "brand":"Finery London",
+    "style":"Party dress",
+    "color":"Purple",
+    "price":"$187.48",
+    "image":"02805_BL7861_m.jpg",
+    "barcode":"389392991-6"
+  },
+  {  
+    "brand":"Corey Lynn Calter",
+    "style":"Low back flare dress",
+    "color":"Turquoise",
+    "price":"$103.68",
+    "image":"07078_RD5689_m.jpg",
+    "barcode":"159813349-7"
+  },
+  {  
+    "brand":"D-ID",
+    "style":"Bodycon dress",
+    "color":"Goldenrod",
+    "price":"$167.76",
+    "image":"06837_PR6437_m.jpg",
+    "barcode":"088958508-3"
+  },
+  {  
+    "brand":"Decjuba",
+    "style":"Maxi dress",
+    "color":"Goldenrod",
+    "price":"$246.82",
+    "image":"28841_BR6390_m.jpg",
+    "barcode":"528065972-X"
+  },
+  {  
+    "brand":"Decjuba",
+    "style":"Fitted dress",
+    "color":"Crimson",
+    "price":"$166.60",
+    "image":"06831_WD9678_m.jpg",
+    "barcode":"017950735-4"
+  },
+  {  
+    "brand":"Dead Ivy",
+    "style":"Mesh insert body-con dress",
+    "color":"Fuscia",
+    "price":"$130.07",
+    "image":"06122_BL8837_m.jpg",
+    "barcode":"535453731-2"
+  },
+  {  
+    "brand":"Dream Monstar",
+    "style":"Fitted dress",
+    "color":"Mauv",
+    "price":"$170.85",
+    "image":"06921_BK0001_m.jpg",
+    "barcode":"700566586-4"
+  },
+  {  
+    "brand":"Harlow",
+    "style":"Laced midi dress",
+    "color":"Fuscia",
+    "price":"$153.25",
+    "image":"06246_BL7491_m.jpg",
+    "barcode":"934726033-9"
+  },
+  {  
+    "brand":"Glamorous",
+    "style":"Maxi dress",
+    "color":"Orange",
+    "price":"$223.42",
+    "image":"05803_GY6336_m.jpg",
+    "barcode":"279469593-2"
+  },
+  {  
+    "brand":"Cheap Monday",
+    "style":"Mesh insert body-con dress",
+    "color":"Khaki",
+    "price":"$115.83",
+    "image":"03804_WE4715_m.jpg",
+    "barcode":"466521621-5"
+  },
+  {  
+    "brand":"D-ID",
+    "style":"Low back flare dress",
+    "color":"Mauv",
+    "price":"$141.15",
+    "image":"06923_WO1161_m.jpg",
+    "barcode":"315831705-2"
+  },
+  {  
+    "brand":"Bless'Ed Are The Meek",
+    "style":"Wrap skirt dress",
+    "color":"Violet",
+    "price":"$112.77",
+    "image":"28841_BR6390_m.jpg",
+    "barcode":"512830986-X"
+  },
+  {  
+    "brand":"Finery London",
+    "style":"Mesh stripe fit and flare dress",
+    "color":"Goldenrod",
+    "price":"$245.53",
+    "image":"08690_WD9728_m.jpg",
+    "barcode":"151677933-9"
+  },
+  {  
+    "brand":"Coco Ribbon",
+    "style":"Draped lux dress",
+    "color":"Yellow",
+    "price":"$159.19",
+    "image":"06815_WO2090_m.jpg",
+    "barcode":"710552411-1"
+  },
+  {  
+    "brand":"Fate",
+    "style":"Wrap skirt dress",
+    "color":"Mauv",
+    "price":"$213.19",
+    "image":"04171_WP0658_m.jpg",
+    "barcode":"194004838-9"
+  },
+  {  
+    "brand":"Black By Geng",
+    "style":"Wrap skirt dress",
+    "color":"Fuscia",
+    "price":"$135.47",
+    "image":"41825_BL7441_m.jpg",
+    "barcode":"988338116-6"
+  },
+  {  
+    "brand":"Dead Ivy",
+    "style":"Bodycon dress",
+    "color":"Aquamarine",
+    "price":"$165.42",
+    "image":"65251_BL7442_m.jpg",
+    "barcode":"110771073-1"
+  },
+  {  
+    "brand":"First Base",
+    "style":"Maxi dress",
+    "color":"Khaki",
+    "price":"$169.29",
+    "image":"07454_GY6397_m.jpg",
+    "barcode":"274845430-8"
+  },
+  {  
+    "brand":"Bluejuice",
+    "style":"Mesh stripe fit and flare dress",
+    "color":"Crimson",
+    "price":"$177.60",
+    "image":"22511_NA6814_m.jpg",
+    "barcode":"160971843-7"
+  },
+  {  
+    "brand":"Harlow",
+    "style":"Laced midi dress",
+    "color":"Khaki",
+    "price":"$106.01",
+    "image":"07869_WO1140_m.jpg",
+    "barcode":"654366266-2"
+  },
+  {  
+    "brand":"Finery London",
+    "style":"Wrap skirt dress",
+    "color":"Indigo",
+    "price":"$137.73",
+    "image":"30219_RD6005_m.jpg",
+    "barcode":"787790393-6"
+  },
+  {  
+    "brand":"Camilla",
+    "style":"Bodycon dress",
+    "color":"Indigo",
+    "price":"$157.97",
+    "image":"07199_BK0001_m.jpg",
+    "barcode":"780974859-9"
+  },
+  {  
+    "brand":"First Base",
+    "style":"Low back flare dress",
+    "color":"Puce",
+    "price":"$234.58",
+    "image":"06798_WD9810_m.jpg",
+    "barcode":"941512924-7"
+  },
+  {  
+    "brand":"Black By Geng",
+    "style":"Shirt dress",
+    "color":"Goldenrod",
+    "price":"$192.06",
+    "image":"07458_PK5695_m.jpg",
+    "barcode":"818743003-6"
+  },
+  {  
+    "brand":"Godwin Charli",
+    "style":"Fitted dress",
+    "color":"Red",
+    "price":"$168.37",
+    "image":"06940_BL9436_m.jpg",
+    "barcode":"506882318-X"
+  },
+  {  
+    "brand":"Finders Keepers",
+    "style":"Shirt dress",
+    "color":"Maroon",
+    "price":"$212.54",
+    "image":"41825_BL7441_m.jpg",
+    "barcode":"407961287-7"
+  },
+  {  
+    "brand":"Dead Ivy",
+    "style":"Low back flare dress",
+    "color":"Mauv",
+    "price":"$165.84",
+    "image":"08173_RD5619_m.jpg",
+    "barcode":"917466905-2"
+  },
+  {  
+    "brand":"By Weave",
+    "style":"Bodycon dress",
+    "color":"Green",
+    "price":"$249.68",
+    "image":"03446_RD6160_m.jpg",
+    "barcode":"617982063-5"
+  },
+  {  
+    "brand":"Black By Geng",
+    "style":"Maxi dress",
+    "color":"Yellow",
+    "price":"$245.45",
+    "image":"08578_BK0001_m.jpg",
+    "barcode":"977164952-3"
+  },
+  {  
+    "brand":"Cameo Collective",
+    "style":"Low back flare dress",
+    "color":"Puce",
+    "price":"$192.21",
+    "image":"24155_BK0001_m.jpg",
+    "barcode":"998481450-5"
+  },
+  {  
+    "brand":"Cameo Collective",
+    "style":"Draped lux dress",
+    "color":"Crimson",
+    "price":"$130.42",
+    "image":"07450_WO0921_m.jpg",
+    "barcode":"370999513-2"
+  },
+  {  
+    "brand":"By Weave",
+    "style":"Cocktail dress",
+    "color":"Teal",
+    "price":"$149.82",
+    "image":"05941_BL8133_m.jpg",
+    "barcode":"045321897-0"
+  },
+  {  
+    "brand":"Casa Kuma",
+    "style":"Bodycon dress",
+    "color":"Pink",
+    "price":"$138.85",
+    "image":"02890_RD6501_m.jpg",
+    "barcode":"818125648-4"
+  },
+  {  
+    "brand":"Godwin Charli",
+    "style":"Mesh insert body-con dress",
+    "color":"Red",
+    "price":"$216.61",
+    "image":"06837_PR6437_m.jpg",
+    "barcode":"735210032-6"
+  },
+  {  
+    "brand":"Bless'Ed Are The Meek",
+    "style":"Draped lux dress",
+    "color":"Maroon",
+    "price":"$241.12",
+    "image":"06944_BL7715_m.jpg",
+    "barcode":"776070913-7"
+  },
+  {  
+    "brand":"By Weave",
+    "style":"Low back flare dress",
+    "color":"Purple",
+    "price":"$203.36",
+    "image":"03446_RD6160_m.jpg",
+    "barcode":"571968251-1"
+  },
+  {  
+    "brand":"Dream Monstar",
+    "style":"Mesh insert body-con dress",
+    "color":"Maroon",
+    "price":"$203.75",
+    "image":"07450_WO0921_m.jpg",
+    "barcode":"623205810-0"
+  },
+  {  
+    "brand":"Corey Lynn Calter",
+    "style":"Fitted dress",
+    "color":"Goldenrod",
+    "price":"$208.07",
+    "image":"06923_WO1161_m.jpg",
+    "barcode":"006527756-2"
+  },
+  {  
+    "brand":"Cameo Collective",
+    "style":"Cocktail dress",
+    "color":"Pink",
+    "price":"$199.19",
+    "image":"02805_BL7861_m.jpg",
+    "barcode":"171316686-0"
+  },
+  {  
+    "brand":"Dorothy Perkins",
+    "style":"Mesh insert body-con dress",
+    "color":"Turquoise",
+    "price":"$155.36",
+    "image":"01780_WE2942_m.jpg",
+    "barcode":"112272795-X"
+  },
+  {  
+    "brand":"D-ID",
+    "style":"Bodycon dress",
+    "color":"Pink",
+    "price":"$176.99",
+    "image":"41752_BL8133_m.jpg",
+    "barcode":"124903221-0"
+  },
+  {  
+    "brand":"Glamorous",
+    "style":"Wrap skirt dress",
+    "color":"Goldenrod",
+    "price":"$131.82",
+    "image":"07192_WO1132_m.jpg",
+    "barcode":"929934599-6"
+  },
+  {  
+    "brand":"Dream Monstar",
+    "style":"Mesh stripe fit and flare dress",
+    "color":"Orange",
+    "price":"$214.86",
+    "image":"06943_BL9433_m.jpg",
+    "barcode":"017921926-X"
+  },
+  {  
+    "brand":"Embody Denim",
+    "style":"Cocktail dress",
+    "color":"Violet",
+    "price":"$225.30",
+    "image":"06246_BL7491_m.jpg",
+    "barcode":"378778162-5"
+  },
+  {  
+    "brand":"Cooper St",
+    "style":"Mesh insert body-con dress",
+    "color":"Turquoise",
+    "price":"$156.12",
+    "image":"07458_PK5695_m.jpg",
+    "barcode":"488274399-X"
+  },
+  {  
+    "brand":"Fate",
+    "style":"Mesh insert body-con dress",
+    "color":"Turquoise",
+    "price":"$120.26",
+    "image":"05122_BK0001_m.jpg",
+    "barcode":"605611198-9"
+  },
+  {  
+    "brand":"Glamorous",
+    "style":"Laced midi dress",
+    "color":"Indigo",
+    "price":"$214.44",
+    "image":"06831_WD9678_m.jpg",
+    "barcode":"622050971-4"
+  }
+]
