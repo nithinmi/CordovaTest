@@ -5,7 +5,19 @@
   <author href="http://cordova.io" email="dev@cordova.apache.org">Apache Cordova Team</author>
   <content src="index.html" />
   <access origin="*" />
+  
   <preference name="SplashScreen" value="screen" />
+
+  
+  <platform name="android">
+    <icon src="res/icons/android/icon-36-ldpi.png" density="ldpi" />
+    <icon src="res/icons/android/icon-48-mdpi.png" density="mdpi" />
+    <icon src="res/icons/android/icon-72-hdpi.png" density="hdpi" />
+    <icon src="res/icons/android/icon-96-xhdpi.png" density="xhdpi" />
+  </platform>
+
+  <icon src="res/icons/ios/icon-76-2x.png" platform="ios" width="152" height="152"/>
+
   <preference name="windows-target-version" value="8.0" />
   <preference name="windows-phone-target-version" value="8.1" />
   <preference name="target-device" value="tablet" />

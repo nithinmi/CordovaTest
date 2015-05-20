@@ -1,9 +1,14 @@
 {
-  "changedFilesIos": [],
+  "changedFilesIos": [
+    "scripts\\load-products.js",
+    "index.html"
+  ],
   "deletedFilesIos": [],
   "addedPluginsIos": [],
   "deletedPluginsIos": [],
-  "changedFiles": [],
+  "changedFiles": [
+    "index.html"
+  ],
   "deletedFiles": [],
   "addedPlugins": [],
   "deletedPlugins": []

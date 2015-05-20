@@ -1,6 +1,8 @@
 "use strict";
 $(document).ready(function () {
 
+    //alert("LOADING PRODUCTS");
+
     var json = [
         { "brand": "Dream Monstar", "product": "Bodycon dress", "color": "Goldenrod", "price": "$157.73", "image": "08173_RD5619_m.jpg", "barcode": "9788366620049" },
         { "brand": "Black By Geng", "product": "Wrap skirt dress", "color": "Red", "price": "$188.95", "image": "22511_NA6814_m.jpg", "barcode": "9788366620063" },
