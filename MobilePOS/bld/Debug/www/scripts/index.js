@@ -8,8 +8,6 @@ var MobilePOS;
     "use strict";
 
     (function (Application) {
-        var scannedBarcodes = [];
-
         function initialize() {
             document.addEventListener('deviceready', onDeviceReady, false);
         }
@@ -28,6 +26,8 @@ var MobilePOS;
 
             // navigator.splashscreen.show();
             document.getElementById("scanBtn").addEventListener("click", scanAndShow);
+
+            document.getElementById("btnCheckOut").addEventListener("click", processPayment);
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         }
 
@@ -49,8 +49,6 @@ var MobilePOS;
                 setTimeout(function () {
                     //alert("We have a barcode\n" + "Result: " + result.text + "\n" + "Format: " + result.format + "\n" + "Cancelled:" + result.cancelled);
                     if ((result.cancelled == false) || (result.cancelled == 0)) {
-                        scannedBarcodes.push(result.text);
-
                         //only works in android. iPad has no vibration
                         navigator.notification.vibrate(1000);
 
@@ -72,13 +70,13 @@ var MobilePOS;
                                 scrollTop: $("#" + result.text).offset().top
                             }, 500);
 
-                            var total = 0;
+                            var total = 0.0;
                             $("#cartItems li").each(function (index) {
                                 var price = $(this).children('.price').text();
                                 total += parseFloat(price.substring(1, price.length - 1));
                             });
 
-                            $("#cart_Total").text(total.toString());
+                            $("#cart_Total").text("$" + parseFloat(total.toString()).toFixed(2));
                         } else {
                             notificationAlert("No matching product found!", "Info");
                         }
@@ -89,14 +87,27 @@ var MobilePOS;
             }, function (error) {
                 notificationAlert("Scanning failed!", "Error");
             });
+        }
+        function notificationAlert(notficationMsg, notificationTitle) {
+            navigator.notification.alert(notficationMsg, alertDismissed, notificationTitle, 'Done');
+        }
+        function alertDismissed() {
+            // do something
+        }
 
-            function notificationAlert(notficationMsg, notificationTitle) {
-                navigator.notification.alert(notficationMsg, alertDismissed, notificationTitle, 'Done');
-            }
+        function processPayment() {
+            var xmlData = "<Payment>" + "<PaymentInvoices>" + "<PaymentInvoice>" + "<InvoiceId>" + "186808" + "</InvoiceId>" + "<PaymentAmount>" + "20" + "</PaymentAmount>" + "</PaymentInvoice>" + "</PaymentInvoices>" + "</Payment> ";
 
-            function alertDismissed() {
-                // do something
-            }
+            $.ajax({
+                type: 'POST',
+                data: xmlData,
+                contentType: 'text/xml',
+                accept: 'version_1.0',
+                url: 'http://192.168.193.197/wholesaleapi/Payments/?requestPersonId=28946&requestCustomerId=3681',
+                success: function (data) {
+                    notificationAlert("Payment ID: " + JSON.stringify(data).substr(24, 3), "Success");
+                }
+            });
         }
 
         function onPause() {

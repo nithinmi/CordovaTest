@@ -26,8 +26,6 @@ var MobilePOS;
 
             // navigator.splashscreen.show();
             document.getElementById("scanBtn").addEventListener("click", scanAndShow);
-
-            document.getElementById("btnCheckOut").addEventListener("click", processPayment);
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         }
 
@@ -70,13 +68,13 @@ var MobilePOS;
                                 scrollTop: $("#" + result.text).offset().top
                             }, 500);
 
-                            var total = 0.0;
+                            var total = 0;
                             $("#cartItems li").each(function (index) {
                                 var price = $(this).children('.price').text();
                                 total += parseFloat(price.substring(1, price.length - 1));
                             });
 
-                            $("#cart_Total").text("$" + parseFloat(total.toString()).toFixed(2));
+                            $("#cart_Total").text("$" + total.toString());
                         } else {
                             notificationAlert("No matching product found!", "Info");
                         }
@@ -87,27 +85,14 @@ var MobilePOS;
             }, function (error) {
                 notificationAlert("Scanning failed!", "Error");
             });
-        }
-        function notificationAlert(notficationMsg, notificationTitle) {
-            navigator.notification.alert(notficationMsg, alertDismissed, notificationTitle, 'Done');
-        }
-        function alertDismissed() {
-            // do something
-        }
 
-        function processPayment() {
-            var xmlData = "<Payment>" + "<PaymentInvoices>" + "<PaymentInvoice>" + "<InvoiceId>" + "186808" + "</InvoiceId>" + "<PaymentAmount>" + "20" + "</PaymentAmount>" + "</PaymentInvoice>" + "</PaymentInvoices>" + "</Payment> ";
+            function notificationAlert(notficationMsg, notificationTitle) {
+                navigator.notification.alert(notficationMsg, alertDismissed, notificationTitle, 'Done');
+            }
 
-            $.ajax({
-                type: 'POST',
-                data: xmlData,
-                contentType: 'text/xml',
-                accept: 'version_1.0',
-                url: 'http://192.168.193.197/wholesaleapi/Payments/?requestPersonId=28946&requestCustomerId=3681',
-                success: function (data) {
-                    notificationAlert("Payment ID: " + JSON.stringify(data).substr(24, 3), "Success");
-                }
-            });
+            function alertDismissed() {
+                // do something
+            }
         }
 
         function onPause() {
