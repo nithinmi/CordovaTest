@@ -62,14 +62,24 @@ module MobilePOS {
                             if (document.getElementById(result.text)) {
                                 document.getElementById(result.text).style.background = '#92B9DD';
 
-                                var item = $("<li />");
-                                item.append("<span class='product-name' >" + document.getElementById(result.text).childNodes[2].textContent + "</span>")
-                                item.append("<span class='qty' > 1x </span>");
-                                item.append("<div class='price'>" + document.getElementById(result.text).childNodes[4].textContent + "</div>");
-                                item.append("<a href='#' class='item-remove img-replace'></a>");
+                                if ($("#cartItems #C_" + result.text).length) {
+                                    var item = $("#cartItems #C_" + result.text)
+                                    var qtyx = item.children('.qty');
+                                    var qty = parseInt(qtyx.text().trim().substring(2));
+                                    alert(qtyx.text().trim().substring(2));
+                                    qty = qty + 1;
+                                    qtyx.text("x " + qty);
+                                }
+                                else { 
+                                    var item = $("<li />");
+                                    item.attr('id', 'C_'+result.text);
+                                    item.append("<span class='product-name' >" + document.getElementById(result.text).childNodes[2].textContent + "</span>")
+                                    item.append("<span class='qty'>x 1</span>");
+                                    item.append("<div class='price'>" + document.getElementById(result.text).childNodes[4].textContent + "</div>");
+                                    item.append("<a href='#' class='item-remove img-replace'></a>");
 
-                                $("#cartItems").append(item);
-
+                                    $("#cartItems").append(item);
+                                }
                                 var notficationMsg = result.text + " added to your cart!";
                                 notificationAlert(notficationMsg, "Success");
 
@@ -79,8 +89,13 @@ module MobilePOS {
 
                                 var total = 0.0;
                                 $("#cartItems li").each(function (index) {
-                                    var price = $(this).children('.price').text();
-                                    total += parseFloat(price.substring(1, price.length - 1));
+                                    var pricex = $(this).children('.price');
+                                    var price = parseFloat(pricex.text().trim().substring(1));
+
+                                    var qtyx = $(this).children('.qty');
+                                    var qty = parseInt(qtyx.text().trim().substring(2));
+                                    alert(qtyx.text().trim().length + " ---> " + qty + "  " + price);
+                                    total += (qty * price);
                                 });
 
                                 $("#cart_Total").text("$" + parseFloat(total.toString()).toFixed(2));
@@ -125,7 +140,7 @@ module MobilePOS {
                             "</PaymentInvoice>" + 
                         "</PaymentInvoices>" +
                      "</Payment> ";
-
+/*
             $.ajax({
                 type: 'POST',
                 data: xmlData,
@@ -135,7 +150,7 @@ module MobilePOS {
                 success: function (data) {
                     notificationAlert("Payment ID: "  + JSON.stringify(data).substr(24, 3), "Success");
                 }
-            });
+            }); */
         }
 
 

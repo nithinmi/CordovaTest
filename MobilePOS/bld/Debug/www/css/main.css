@@ -3567,7 +3567,9 @@ body.overflow-hidden {
       #cart .cart-items li:before {
         display: none; }
   #cart .qty, #cart .price {
-    color: #a5aebc; }
+    color: #a5aebc; 
+    padding-left: 5px;
+  }
   #cart .item-remove {
     position: absolute;
     right: 1em;
