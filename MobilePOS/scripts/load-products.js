@@ -7,7 +7,7 @@ $(document).ready(function () {
         { "brand": "Dream Monstar", "product": "Bodycon dress", "color": "Goldenrod", "price": "$157.73", "image": "08173_RD5619_m.jpg", "barcode": "9788366620049" },
         { "brand": "Black By Geng", "product": "Wrap skirt dress", "color": "Red", "price": "$188.95", "image": "22511_NA6814_m.jpg", "barcode": "9788366620063" },
         { "brand": "Fate", "product": "Bodycon dress", "color": "Teal", "price": "$232.11", "image": "41752_BL8133_m.jpg", "barcode": "9788366620025" },
-        { "brand": "Embody Denim", "product": "Fitted dress", "color": "Orange", "price": "$240.57", "image": "66737_GY6529_m.jpg", "barcode": "97883666200432" },
+        { "brand": "Embody Denim", "product": "Fitted dress", "color": "Orange", "price": "$240.57", "image": "66737_GY6529_m.jpg", "barcode": "97883666200439" },
         { "brand": "Harlow", "product": "Fitted dress", "color": "Purple", "price": "$218.69", "image": "03446_RD6160_m.jpg", "barcode": "9788366620087" },
         { "brand": "Cooper St", "product": "Fitted dress", "color": "Puce", "price": "$131.25", "image": "65251_BL7442_m.jpg", "barcode": "9788366620049" },
         { "brand": "Black By Geng", "product": "Fitted dress", "color": "Pink", "price": "$143.66", "image": "07199_BK0001_m.jpg", "barcode": "9788366620049" },

@@ -19,12 +19,29 @@ var MobilePOS;
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
 
-            //document.getElementById("deviceName").innerHTML = "Device :" + device.name;
-            //document.getElementById("devicePlatform").innerHTML = "Platform: " + device.platform;
-            //document.getElementById("deviceModel").innerHTML = "Model: " + device.model;
+            document.getElementById("deviceName").innerHTML = " Device: " + device.name;
+            document.getElementById("devicePlatform").innerHTML = " Platform: " + device.platform;
+            document.getElementById("deviceModel").innerHTML = "Model: " + device.model;
+
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
             // navigator.splashscreen.show();
             document.getElementById("scanBtn").addEventListener("click", scanAndShow);
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
+        }
+
+        var onSuccess = function (position) {
+            alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: ' + position.coords.longitude + '\n' + 'Altitude: ' + position.coords.altitude + '\n' + 'Accuracy: ' + position.coords.accuracy + '\n' + 'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' + 'Heading: ' + position.coords.heading + '\n' + 'Speed: ' + position.coords.speed + '\n' + 'Timestamp: ' + position.timestamp + '\n');
+
+            document.getElementById("lattitude").innerHTML = " Latitude: " + position.coords.latitude;
+            document.getElementById("longitude").innerHTML = " Longitude: " + position.coords.longitude;
+            document.getElementById("altitude").innerHTML = " Altitude: " + position.coords.altitude;
+        };
+
+        function onError(error) {
+            document.getElementById("lattitude").innerHTML = " Latitude: " + 0;
+            document.getElementById("longitude").innerHTML = " Longitude: " + 0;
+            document.getElementById("altitude").innerHTML = " Altitude: " + 0;
         }
 
         function scanAndShow() {
@@ -40,8 +57,8 @@ var MobilePOS;
 
                         if (document.getElementById(result.text)) {
                             document.getElementById(result.text).style.background = '#92B9DD';
-                            document.getElementById('itemsInCart').innerHTML = scannedBarcodes.length + " items in cart";
 
+                            //document.getElementById('itemsInCart').innerHTML = scannedBarcodes.length + " items in cart";
                             var notficationMsg = result.text + " added to your cart!";
                             notificationAlert(notficationMsg, "Success");
                         }

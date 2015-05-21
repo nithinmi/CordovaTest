@@ -16,6 +16,52 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+
+
+/* Light */
+@font-face {
+	font-family: "Roboto Condensed";
+	font-style: normal;
+	font-weight: 300;
+	src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'), url("../fonts/RobotoCondensed-Light.woff") format('woff');
+}
+@font-face {
+	font-family: "Roboto Condensed";
+	font-style: italic;
+	font-weight: 300;
+	src: local('Roboto Condensed Light Italic'), local('RobotoCondensed-LightItalic'), url("../fonts/RobotoCondensed-LightItalic.ttf") format('truetype');
+}
+ 
+/* Normal */
+@font-face {
+	font-family: "Roboto Condensed";
+	font-style: normal;
+	font-weight: 400;
+	src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url("../fonts/RobotoCondensed-Regular.ttf") format('truetype');
+}
+@font-face {
+	font-family: "Roboto Condensed";
+	font-style: italic;
+	font-weight: 400;
+	src: local('Roboto Condensed Italic'), local('RobotoCondensed-Italic'), url("../fonts/RobotoCondensed-Italic.ttf") format('truetype');
+}
+ 
+/* Bold */
+@font-face {
+	font-family: "Roboto Condensed";
+	font-style: normal;
+	font-weight: 700;
+	src: local('Roboto Condensed Bold'), local('RobotoCondensed-Bold'), url("../fonts/RobotoCondensed-Bold.ttf") format('truetype');
+}
+@font-face {
+	font-family: "Roboto Condensed";
+	font-style: italic;
+	font-weight: 700;
+	src: local('Roboto Condensed Bold Italic'), local('RobotoCondensed-BoldItalic'), url("../fonts/RobotoCondensed-BoldItalic.ttf") format('truetype');
+}
+
+
+
 html,
 button,
 input,
@@ -3365,7 +3411,8 @@ main {
 product {
   display: inline-block;
   border: 5px solid #ddd;
-  padding: 0.5em; }
+  padding: 0.5em;
+  text-align: center; }
   product h4, product p {
     padding-top: 0;
     display: -webkit-box;
@@ -3380,10 +3427,15 @@ product-list product {
   float: left;
   margin-left: 15px;
   margin-bottom: 15px;
-  width: 30%; }
+  width: calc( (100% - 30px) / 3); }
   product-list product:nth-child(3n+1) {
     clear: left;
     margin-left: 0; }
+
+@media only screen and (max-width: 640px) {
+  product-list product {
+    width: 90%;
+    margin-left: auto; } }
 
 related-list product {
   float: left;
@@ -3393,18 +3445,21 @@ related-list product {
     clear: left;
     margin-left: 0; }
 
-search {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-top: 0.75em;
-  width: 100px; }
-  search > input, search > .barcode-scanner {
+.app-bar-container {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  padding-top: 5px; }
+  .app-bar-container .barcode-scanner {
+    margin-left: auto;
     float: right; }
-  search input {
+  .app-bar-container input {
     outline: none; }
-    search input[type=search] {
+    .app-bar-container input[type=search] {
       width: 0;
+      height: 24px;
       padding-left: 10px;
       color: transparent;
       cursor: pointer;
@@ -3417,18 +3472,191 @@ search {
       transition: all 0.5s;
       -webkit-appearance: textfield;
       -webkit-box-sizing: content-box; }
-      search input[type=search]:hover {
+      .app-bar-container input[type=search]:hover {
         background-color: rgba(255, 255, 255, 0.5); }
-      search input[type=search]:focus {
-        width: 130px;
+      .app-bar-container input[type=search]:focus {
+        width: 90%;
         padding-left: 32px;
         color: #333;
         background-color: rgba(255, 255, 255, 0.7);
         cursor: auto; }
-    search input::-webkit-search-decoration, search input::-webkit-search-cancel-button {
+    .app-bar-container input::-webkit-search-decoration, .app-bar-container input::-webkit-search-cancel-button {
       display: none; }
-    search input:-moz-placeholder, search input::-webkit-input-placeholder {
+    .app-bar-container input:-moz-placeholder, .app-bar-container input::-webkit-input-placeholder {
       color: transparent; }
-  search .barcode-scanner {
+  .app-bar-container .barcode-scanner {
     padding: 20px 26px;
     background: url(../images/icons/barcode-search.svg) no-repeat 50% 50%; }
+
+#shadow-layer {
+  position: fixed;
+  min-height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(67, 87, 121, 0.6);
+  cursor: pointer;
+  z-index: 2;
+  display: none; }
+
+#shadow-layer.is-visible {
+  display: block;
+  -webkit-animation: fade-in 0.3s;
+  animation: fade-in 0.3s; }
+
+body.overflow-hidden {
+  /* prevent 2 vertical scrollbars on ie and firefox when the cart is visible */
+  overflow: hidden; }
+
+#cart-trigger {
+  right: 0;
+  background: #7dcf85;
+  position: fixed;
+  bottom: 0; }
+  #cart-trigger a {
+    background: url("../images/icons/cart.svg") no-repeat 120px center;
+    width: 200px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 15px 40px; }
+
+@media only screen and (min-width: 1200px) {
+  #cart-trigger {
+    /* cart right margin on desktop */
+    right: 0; } }
+
+#cart {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 260px;
+  /* header height */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  right: -100%;
+  background: #FFF;
+  -webkit-transition: right 0.3s;
+  transition: right 0.3s; }
+  #cart.speed-in {
+    right: 0; }
+  #cart > * {
+    padding: 0 1em; }
+  #cart h2 {
+    font-size: 18px;
+    margin: 1em 0; }
+  #cart .cart-items {
+    padding: 0;
+    height: calc(100% - 108px);
+    overflow-y: scroll; }
+    #cart .cart-items li {
+      position: relative;
+      padding: 1em;
+      border-top: 1px solid #e0e6ef; }
+      #cart .cart-items li:last-child {
+        border-bottom: 1px solid #e0e6ef; }
+      #cart .cart-items li:before {
+        display: none; }
+  #cart .qty, #cart .price {
+    color: #a5aebc; }
+  #cart .item-remove {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: url("../images/icons/remove.svg") no-repeat center center; }
+  #cart .cart-total {
+    background: #eee;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 1.25em;
+    position: absolute;
+    bottom: 60px;
+    width: 100%; }
+    #cart .cart-total span {
+      float: right; }
+    #cart .cart-total::after {
+      /* clearfix */
+      content: '';
+      display: table;
+      clear: both; }
+  #cart .checkout-btn {
+    display: block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    background: #7dcf85 url("../images/icons/cart.svg") no-repeat 75% center;
+    position: absolute;
+    bottom: 0; }
+
+@media only screen and (min-width: 768px) {
+  #cart {
+    width: 350px; } }
+
+@media only screen and (min-width: 1200px) {
+  #cart {
+    width: 30%;
+    /* header height has changed */
+    padding-top: 80px; } }
+
+@media only screen and (max-width: 768px) {
+  #cart .checkout-btn {
+    background-position: 85% center; } }
+
+@media only screen and (min-width: 1200px) {
+  #cart > * {
+    padding: 0 2em; }
+  #cart .cart-items li {
+    padding: 1em 2em; }
+  #cart .item-remove {
+    right: 2em; } }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+footer {
+  display: inline-block;
+  background: #4285f4;
+  padding: 26px 0 52px;
+  width: 100%;
+  height: 20px;
+  margin-bottom: -10px;
+  text-align: center;
+  color: #FFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }

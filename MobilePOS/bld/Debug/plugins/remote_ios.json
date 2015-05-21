@@ -42,6 +42,12 @@
                             "xml": "true",
                             "count": 2
                         }
+                    ],
+                    "CoreLocation.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -53,11 +59,29 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "NSLocationWhenInUseUsageDescription": [
+                        {
+                            "xml": "<string />",
                             "count": 1
                         }
                     ]
@@ -69,7 +93,13 @@
         "com.phonegap.plugins.barcodescanner": {
             "PACKAGE_NAME": "io.cordova.MobilePOS"
         },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "io.cordova.MobilePOS"
+        },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "io.cordova.MobilePOS"
+        },
+        "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "io.cordova.MobilePOS"
         },
         "org.apache.cordova.vibration": {
