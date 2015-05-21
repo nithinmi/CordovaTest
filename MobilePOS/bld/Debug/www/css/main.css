@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*
  * Web Starter Kit
  *
@@ -3454,7 +3454,9 @@ related-list product {
   padding-top: 5px; }
   .app-bar-container .barcode-scanner {
     margin-left: auto;
-    float: right; }
+    float: right; 
+    position: absolute;
+  }
   .app-bar-container input {
     outline: none; }
     .app-bar-container input[type=search] {
@@ -3486,6 +3488,8 @@ related-list product {
       color: transparent; }
   .app-bar-container .barcode-scanner {
     padding: 20px 26px;
+    float: right;
+    position: absolute;
     background: url(../images/icons/barcode-search.svg) no-repeat 50% 50%; }
 
 #shadow-layer {

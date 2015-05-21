@@ -830,6 +830,7 @@
     </Content>
     <Content Include="index.html" />
     <TypeScriptCompile Include="scripts\index.ts" />
+    <TypeScriptCompile Include="scripts\jquery.d.ts" />
     <TypeScriptCompile Include="scripts\platformOverrides.ts" />
     <Content Include="css\index.css" />
     <Content Include="packages.config" />

@@ -2,6 +2,9 @@
 // http://go.microsoft.com/fwlink/?LinkID=397705
 // To debug code on page load in Ripple or on Android devices/emulators: launch your app, set breakpoints, 
 // and then run "window.location.reload()" in the JavaScript Console.
+
+/// <reference path="jquery.d.ts"/>
+
 module MobilePOS {
     "use strict";
 
@@ -32,16 +35,6 @@ module MobilePOS {
         }
 
         var onSuccess = function (position) {
-
-            alert('Latitude: ' + position.coords.latitude + '\n' +
-                'Longitude: ' + position.coords.longitude + '\n' +
-                'Altitude: ' + position.coords.altitude + '\n' +
-                'Accuracy: ' + position.coords.accuracy + '\n' +
-                'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' +
-                'Heading: ' + position.coords.heading + '\n' +
-                'Speed: ' + position.coords.speed + '\n' +
-                'Timestamp: ' + position.timestamp + '\n');
-
             document.getElementById("lattitude").innerHTML = " Latitude: " + position.coords.latitude;
             document.getElementById("longitude").innerHTML = " Longitude: " + position.coords.longitude;
             document.getElementById("altitude").innerHTML = " Altitude: " +position.coords.altitude;
@@ -69,10 +62,33 @@ module MobilePOS {
 
                             if (document.getElementById(result.text)) {
                                 document.getElementById(result.text).style.background = '#92B9DD';
-                                //document.getElementById('itemsInCart').innerHTML = scannedBarcodes.length + " items in cart";
+
+                                var item = $("<li />");
+                                item.append("<span class='product-name' >" + document.getElementById(result.text).childNodes[2].textContent + "</span>")
+                                item.append("<span class='qty' > 1x </span>");
+                                item.append("<div class='price'>" + document.getElementById(result.text).childNodes[4].textContent + "</div>");
+                                item.append("<a href='#' class='item-remove img-replace'></a>");
+
+                                $("#cartItems").append(item);
 
                                 var notficationMsg = result.text + " added to your cart!";
                                 notificationAlert(notficationMsg, "Success");
+
+                                $('html, body').animate({
+                                    scrollTop: $("#" + result.text).offset().top
+                                }, 500);
+
+                                var total = 0;
+                                $("#cartItems li").each(function (index) {
+                                    var price = $(this).children('.price').text();
+                                    total += parseFloat(price.substring(1, price.length - 1));
+                                });
+
+                                $("#cart_Total").text("$" + total.toString());
+
+                            }
+                            else {
+                                notificationAlert("No matching product found!", "Info");
                             }
                         }
                         else {
