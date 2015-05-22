@@ -9,6 +9,8 @@
   <preference name="SplashScreen" value="screen" />
   <preference name="SplashScreenDelay" value="6000" />
 
+  <preference name="Fullscreen" value="false" />
+
   <preference name="windows-target-version" value="8.0" />
   <preference name="windows-phone-target-version" value="8.1" />
   <preference name="target-device" value="universal" />

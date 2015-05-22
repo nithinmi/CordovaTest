@@ -34,7 +34,7 @@
         <div class="app-bar-container">
             <button class="menu"><img src="images/hamburger.svg" alt="Menu"></button>
             <!--<input class="search" type="search" placeholder="Search">-->
-            <a class="search" id="scanBtn"></a>
+            <a class="barcode-scanner" id="scanBtn"></a>
         </div>
     </header>
     <nav class="navdrawer-container promote-layer">
@@ -63,6 +63,12 @@
     </div>
     <div id="shadow-layer" class=""></div>
 
+    <div class="loader">
+        <center>
+            <img class="loading-image" src="images/icons/loading.gif" alt="loading..">
+        </center>
+    </div>
+
     <footer>
         <span id="devicePlatform"></span> &nbsp;
         <span id="deviceModel"></span> &nbsp;
@@ -71,6 +77,7 @@
         <span id="longitude"></span> &nbsp;
         <span id="altitude"></span> &nbsp;
     </footer>
+
 
     <script src="scripts/jquery-1.8.3.js"></script>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->

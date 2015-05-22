@@ -126,6 +126,7 @@
     <Content Include="images\icons\icons.ttf" />
     <Content Include="images\icons\icons.woff" />
     <Content Include="images\icons\icons.woff2" />
+    <Content Include="images\icons\loading.gif" />
     <Content Include="images\icons\placeholder--medium.png" />
     <Content Include="images\icons\placeholder--small.png" />
     <Content Include="images\icons\placeholder--wide.png" />

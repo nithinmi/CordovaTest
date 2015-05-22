@@ -60,7 +60,27 @@
 	src: local('Roboto Condensed Bold Italic'), local('RobotoCondensed-BoldItalic'), url("../fonts/RobotoCondensed-BoldItalic.ttf") format('truetype');
 }
 
-
+.loading-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+}
+.loader
+{
+    display: none;
+    width: 25%;
+    height: 25%;
+    position: fixed;
+    top: 40%;
+    left: 20%;
+    text-align:center;
+    /*margin-left: -50px;
+    margin-top: -100px;*/
+    z-index:2;
+    overflow: auto;
+    background-color: #4D4343;
+}
 
 html,
 button,
@@ -3486,11 +3506,15 @@ related-list product {
       display: none; }
     .app-bar-container input:-moz-placeholder, .app-bar-container input::-webkit-input-placeholder {
       color: transparent; }
-  .app-bar-container .barcode-scanner {
-    padding: 20px 26px;
-    float: left;
-    position: absolute;
-    background: url(../images/icons/barcode-search.svg) no-repeat 50% 50%; }
+    .app-bar-container .barcode-scanner {
+        padding: 29px 45px;
+        top: 0px;
+        position: absolute;
+        background: transparent url("../images/icons/barcode-search.svg") no-repeat scroll 50% 50%;
+        width: 180px;
+        margin: 0px auto;
+        left: 40%;
+    }
 
 #shadow-layer {
   position: fixed;
@@ -3518,7 +3542,7 @@ body.overflow-hidden {
   position: fixed;
   bottom: 0; }
   #cart-trigger a {
-    background: url("../images/icons/cart.svg") no-repeat 120px center;
+    background: url("../images/icons/cart.svg") no-repeat 140px center;
     width: 200px;
     height: 50px;
     display: block;
@@ -3526,7 +3550,7 @@ body.overflow-hidden {
     color: #FFF;
     font-weight: bold;
     letter-spacing: 2px;
-    padding: 15px 40px; }
+    padding: 15px 30px; }
 
 @media only screen and (min-width: 1200px) {
   #cart-trigger {

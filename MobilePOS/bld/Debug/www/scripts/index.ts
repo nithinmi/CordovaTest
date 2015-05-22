@@ -188,7 +188,23 @@ module MobilePOS {
                 accept: 'version_1.0',
                 url: 'http://192.168.193.197/wholesaleapi/Payments/?requestPersonId=28946&requestCustomerId=3681',
                 success: function (data) {
-                    notificationAlert("Reference No: "  + JSON.stringify(data).substr(24, 3), "Payment Accepted");
+                    setTimeout(function () {
+                        $('.loader').hide();
+                        notificationAlert("Reference No: " + JSON.stringify(data).substr(24, 3), "Payment Accepted");
+                    }, 3000);
+                },
+                error: function () {
+                    setTimeout(function () {
+                        $('.loader').hide();
+                        notificationAlert("Payment was not successful!", "Error");
+                    }, 3000);
+                    
+                },
+                beforeSend: function () {
+                    $('.loader').show()
+
+                },
+                complete: function () {
                 }
             }); 
         }
