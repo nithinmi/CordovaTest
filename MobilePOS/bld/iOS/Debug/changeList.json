@@ -890,9 +890,14 @@
     "plugins\\com.phonegap.plugins.barcodescanner\\spec\\barcodescanner.tests.js",
     "plugins\\com.phonegap.plugins.barcodescanner\\src\\android\\LibraryProject\\assets\\html-de\\about1d.html",
     "plugins\\com.phonegap.plugins.barcodescanner\\src\\android\\LibraryProject\\src\\com\\google\\zxing\\Binarizer.java",
+    "images\\loading3.gif",
     "images\\icons\\loading.gif"
   ],
-  "deletedFiles": [],
+  "deletedFiles": [
+    "images\\icons\\loading2.gif",
+    "images\\icons\\loading5.gif",
+    "images\\icons\\loading6.gif"
+  ],
   "addedPlugins": [
     "com.phonegap.plugins.barcodescanner@1.2.9",
     "org.apache.cordova.dialogs@0.2.10",

@@ -132,6 +132,7 @@
     <Content Include="images\icons\placeholder--wide.png" />
     <Content Include="images\icons\remove.svg" />
     <Content Include="images\icons\search.svg" />
+    <Content Include="images\loading3.gif" />
     <Content Include="images\products\01780_WE2942_m.jpg" />
     <Content Include="images\products\02805_BL7861_m.jpg" />
     <Content Include="images\products\02890_RD6501_m.jpg" />

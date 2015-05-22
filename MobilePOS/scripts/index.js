@@ -157,13 +157,13 @@ var MobilePOS;
                     setTimeout(function () {
                         $('.loader').hide();
                         notificationAlert("Reference No: " + JSON.stringify(data).substr(24, 3), "Payment Accepted");
-                    }, 3000);
+                    }, 2000);
                 },
                 error: function () {
                     setTimeout(function () {
                         $('.loader').hide();
                         notificationAlert("Payment was not successful!", "Error");
-                    }, 3000);
+                    }, 2000);
                 },
                 beforeSend: function () {
                     $('.loader').show();
