@@ -18,26 +18,49 @@ var MobilePOS;
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
 
-            document.getElementById("deviceName").innerHTML = " Device: " + device.name;
+            checkConnection();
+
             document.getElementById("devicePlatform").innerHTML = " Platform: " + device.platform;
             document.getElementById("deviceModel").innerHTML = "Model: " + device.model;
 
-            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+            navigator.geolocation.getCurrentPosition(onGPSuccess, onGPError);
 
-            // navigator.splashscreen.show();
             document.getElementById("scanBtn").addEventListener("click", scanAndShow);
 
             document.getElementById("btnCheckOut").addEventListener("click", processPayment);
+
+            document.getElementById("customerList").addEventListener("click", displayContacts);
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         }
 
-        var onSuccess = function (position) {
+        function displayContacts() {
+            var options = new ContactFindOptions();
+            options.filter = "";
+            options.multiple = true;
+            var fields = ["displayName", "name", "phoneNumbers"];
+            navigator.contacts.find(fields, onSuccess, onError, options);
+
+            function onSuccess(contacts) {
+                var str = "";
+                for (var i = 0; i < contacts.length; i++) {
+                    str = str + "\n" + contacts[i].name.formatted + " " + contacts[i].phoneNumbers[0];
+                }
+                alert(str);
+            }
+
+            // onError: Failed to get the contacts
+            function onError(contactError) {
+                alert('onError!');
+            }
+        }
+
+        var onGPSuccess = function (position) {
             document.getElementById("lattitude").innerHTML = " Latitude: " + position.coords.latitude;
             document.getElementById("longitude").innerHTML = " Longitude: " + position.coords.longitude;
             document.getElementById("altitude").innerHTML = " Altitude: " + position.coords.altitude;
         };
 
-        function onError(error) {
+        function onGPError(error) {
             document.getElementById("lattitude").innerHTML = " Latitude: " + 0;
             document.getElementById("longitude").innerHTML = " Longitude: " + 0;
             document.getElementById("altitude").innerHTML = " Altitude: " + 0;
@@ -47,7 +70,6 @@ var MobilePOS;
             cordova.plugins.barcodeScanner.scan(function (result) {
                 // wrapping in a timeout so the dialog doesn't free the app
                 setTimeout(function () {
-                    //alert("We have a barcode\n" + "Result: " + result.text + "\n" + "Format: " + result.format + "\n" + "Cancelled:" + result.cancelled);
                     if ((result.cancelled == false) || (result.cancelled == 0)) {
                         //only works in android. iPad has no vibration
                         navigator.notification.vibrate(1000);
@@ -59,7 +81,6 @@ var MobilePOS;
                                 var item = $("#cartItems #C_" + result.text);
                                 var qtyx = item.children('.qty');
                                 var qty = parseInt(qtyx.text().trim().substring(2));
-                                alert(qtyx.text().trim().substring(2));
                                 qty = qty + 1;
                                 qtyx.text("x " + qty);
                             } else {
@@ -83,10 +104,8 @@ var MobilePOS;
                             $("#cartItems li").each(function (index) {
                                 var pricex = $(this).children('.price');
                                 var price = parseFloat(pricex.text().trim().substring(1));
-
                                 var qtyx = $(this).children('.qty');
                                 var qty = parseInt(qtyx.text().trim().substring(2));
-                                alert(qtyx.text().trim().length + " ---> " + qty + "  " + price);
                                 total += (qty * price);
                             });
 
@@ -103,7 +122,7 @@ var MobilePOS;
             });
         }
         function notificationAlert(notficationMsg, notificationTitle) {
-            navigator.notification.alert(notficationMsg, alertDismissed, notificationTitle, 'Done');
+            navigator.notification.alert("\n" + notficationMsg + "\n", alertDismissed, notificationTitle, 'Done');
         }
         function alertDismissed() {
             // do something
@@ -111,17 +130,31 @@ var MobilePOS;
 
         function processPayment() {
             var xmlData = "<Payment>" + "<PaymentInvoices>" + "<PaymentInvoice>" + "<InvoiceId>" + "186808" + "</InvoiceId>" + "<PaymentAmount>" + "20" + "</PaymentAmount>" + "</PaymentInvoice>" + "</PaymentInvoices>" + "</Payment> ";
-            /*
+
             $.ajax({
-            type: 'POST',
-            data: xmlData,
-            contentType: 'text/xml',
-            accept: 'version_1.0',
-            url: 'http://192.168.193.197/wholesaleapi/Payments/?requestPersonId=28946&requestCustomerId=3681',
-            success: function (data) {
-            notificationAlert("Payment ID: "  + JSON.stringify(data).substr(24, 3), "Success");
-            }
-            }); */
+                type: 'POST',
+                data: xmlData,
+                contentType: 'text/xml',
+                accept: 'version_1.0',
+                url: 'http://192.168.193.197/wholesaleapi/Payments/?requestPersonId=28946&requestCustomerId=3681',
+                success: function (data) {
+                    notificationAlert("Payment ID: " + JSON.stringify(data).substr(24, 3), "Success");
+                }
+            });
+        }
+
+        function checkConnection() {
+            var networkState = navigator.connection.type;
+            var states = {};
+            states[Connection.UNKNOWN] = 'Unknown';
+            states[Connection.ETHERNET] = 'Ethernet';
+            states[Connection.WIFI] = 'WiFi';
+            states[Connection.CELL_2G] = 'Cell 2G';
+            states[Connection.CELL_3G] = 'Cell 3G';
+            states[Connection.CELL_4G] = 'Cell 4G';
+            states[Connection.CELL] = 'Cell Generic';
+            states[Connection.NONE] = 'No Network';
+            notificationAlert("Connection detected: " + states[networkState], "Info");
         }
 
         function onPause() {

@@ -19,28 +19,54 @@ module MobilePOS {
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
 
-            document.getElementById("deviceName").innerHTML = " Device: " + device.name;
+            checkConnection();
+
             document.getElementById("devicePlatform").innerHTML = " Platform: " + device.platform;
             document.getElementById("deviceModel").innerHTML =  "Model: " + device.model;
 
-            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+            navigator.geolocation.getCurrentPosition(onGPSuccess, onGPError);
+
             
-            // navigator.splashscreen.show();
 
             document.getElementById("scanBtn").addEventListener("click", scanAndShow);
 
             document.getElementById("btnCheckOut").addEventListener("click", processPayment);
 
+            document.getElementById("customerList").addEventListener("click", displayContacts);
+
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         }
 
-        var onSuccess = function (position) {
+        function displayContacts() {
+            var options = new ContactFindOptions();
+            options.filter = "";
+            options.multiple = true;
+            var fields = ["name"];
+            navigator.contacts.find(fields, onSuccess, onError, options);
+
+            function onSuccess(contacts) {
+                alert(JSON.stringify(contacts));
+                var str = "";
+                for (var i = 0; i < contacts.length; i++) {
+                    str = str + "\n" + contacts[i].name.formatted;
+                }
+                alert(str);
+            }
+
+            // onError: Failed to get the contacts
+            function onError(contactError) {
+                alert('onError!');
+            }
+
+        }
+
+        var onGPSuccess = function (position) {
             document.getElementById("lattitude").innerHTML = " Latitude: " + position.coords.latitude;
             document.getElementById("longitude").innerHTML = " Longitude: " + position.coords.longitude;
             document.getElementById("altitude").innerHTML = " Altitude: " +position.coords.altitude;
         };
 
-        function onError(error) {
+        function onGPError(error) {
             document.getElementById("lattitude").innerHTML = " Latitude: " + 0;
             document.getElementById("longitude").innerHTML = " Longitude: " + 0;
             document.getElementById("altitude").innerHTML = " Altitude: " + 0;
@@ -112,7 +138,7 @@ module MobilePOS {
         }
         function notificationAlert(notficationMsg, notificationTitle) {
             navigator.notification.alert(
-                notficationMsg,  // message
+                "\n" + notficationMsg + "\n",  // message
                 alertDismissed,         // callback
                 notificationTitle,            // title
                 'Done'                  // buttonName
@@ -146,6 +172,20 @@ module MobilePOS {
                     notificationAlert("Payment ID: "  + JSON.stringify(data).substr(24, 3), "Success");
                 }
             }); 
+        }
+
+        function checkConnection() {
+            var networkState = navigator.connection.type;
+            var states = {};
+            states[Connection.UNKNOWN] = 'Unknown';
+            states[Connection.ETHERNET] = 'Ethernet';
+            states[Connection.WIFI] = 'WiFi';
+            states[Connection.CELL_2G] = 'Cell 2G';
+            states[Connection.CELL_3G] = 'Cell 3G';
+            states[Connection.CELL_4G] = 'Cell 4G';
+            states[Connection.CELL] = 'Cell Generic';
+            states[Connection.NONE] = 'No Network';
+            notificationAlert("Connection detected: " + states[networkState], "Info");
         }
 
 

@@ -15,5 +15,7 @@
   <vs:plugin name="org.apache.cordova.vibration" version="0.3.11" />
   <vs:plugin name="org.apache.cordova.device" version="0.2.12" />
   <vs:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
+  <vs:plugin name="org.apache.cordova.network-information" version="0.2.12" />
+  <vs:plugin name="org.apache.cordova.contacts" version="0.2.13" />
   <vs:platformSpecificValues />
 </widget>

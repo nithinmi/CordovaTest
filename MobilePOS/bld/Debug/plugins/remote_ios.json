@@ -37,6 +37,24 @@
                             "count": 1
                         }
                     ],
+                    "AddressBook.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "AddressBookUI.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "CoreGraphics.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
                     "AudioToolbox.framework": [
                         {
                             "xml": "true",
@@ -46,6 +64,12 @@
                     "CoreLocation.framework": [
                         {
                             "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": "true",
                             "count": 1
                         }
                     ]
@@ -59,6 +83,10 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"Contacts\"><param name=\"ios-package\" value=\"CDVContacts\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
                         },
@@ -68,6 +96,10 @@
                         },
                         {
                             "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
                             "count": 1
                         },
                         {
@@ -93,6 +125,9 @@
         "com.phonegap.plugins.barcodescanner": {
             "PACKAGE_NAME": "io.cordova.MobilePOS"
         },
+        "org.apache.cordova.contacts": {
+            "PACKAGE_NAME": "io.cordova.MobilePOS"
+        },
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "io.cordova.MobilePOS"
         },
@@ -100,6 +135,9 @@
             "PACKAGE_NAME": "io.cordova.MobilePOS"
         },
         "org.apache.cordova.geolocation": {
+            "PACKAGE_NAME": "io.cordova.MobilePOS"
+        },
+        "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "io.cordova.MobilePOS"
         },
         "org.apache.cordova.vibration": {
