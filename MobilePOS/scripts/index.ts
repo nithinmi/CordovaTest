@@ -41,16 +41,35 @@ module MobilePOS {
             var options = new ContactFindOptions();
             options.filter = "";
             options.multiple = true;
-            var fields = ["name"];
+            var fields = ["name","displayName","phoneNumbers"];
             navigator.contacts.find(fields, onSuccess, onError, options);
 
             function onSuccess(contacts) {
-                alert(JSON.stringify(contacts));
                 var str = "";
-                for (var i = 0; i < contacts.length; i++) {
-                    str = str + "\n" + contacts[i].name.formatted;
+                var num = 0;
+                if (contacts.length > 5) {
+                    num = 5;
                 }
-                alert(str);
+                else {
+                    num = contacts.length;
+                }
+                for (var i = 0; i < num; i++) {
+                    if (contacts[i].name.formatted) {
+                        str = str + "\n" + contacts[i].name.formatted;
+                    }
+                    else {
+                        str = str + "\n" + contacts[i].displayName;
+                    }
+
+                    var phones = " ";
+                    for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
+
+                        phones += " Ph# " + contacts[i].phoneNumbers[j].value;                      
+                    }
+                    str += phones
+
+                }
+                notificationAlert(str, "Contacts");
             }
 
             // onError: Failed to get the contacts
