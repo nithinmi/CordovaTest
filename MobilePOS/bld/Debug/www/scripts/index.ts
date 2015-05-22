@@ -45,7 +45,6 @@ module MobilePOS {
             navigator.contacts.find(fields, onSuccess, onError, options);
 
             function onSuccess(contacts) {
-                //alert(JSON.stringify(contacts));
                 var str = "";
                 var num = 0;
                 if (contacts.length > 5) {
@@ -61,11 +60,11 @@ module MobilePOS {
                     else {
                         str = str + "\n" + contacts[i].displayName;
                     }
-                    str = str + "\n" + contacts[i].name.formatted;
+
                     var phones = " ";
                     for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
 
-                        phones += " " + contacts[i].phoneNumbers[j].value;                      
+                        phones += " Ph# " + contacts[i].phoneNumbers[j].value;                      
                     }
                     str += phones
 
@@ -189,7 +188,7 @@ module MobilePOS {
                 accept: 'version_1.0',
                 url: 'http://192.168.193.197/wholesaleapi/Payments/?requestPersonId=28946&requestCustomerId=3681',
                 success: function (data) {
-                    notificationAlert("Payment ID: "  + JSON.stringify(data).substr(24, 3), "Success");
+                    notificationAlert("Reference No: "  + JSON.stringify(data).substr(24, 3), "Payment Accepted");
                 }
             }); 
         }

@@ -3454,7 +3454,7 @@ related-list product {
   padding-top: 5px; }
   .app-bar-container .barcode-scanner {
     margin-left: auto;
-    float: right; 
+    float: left; 
     position: absolute;
   }
   .app-bar-container input {
@@ -3488,7 +3488,7 @@ related-list product {
       color: transparent; }
   .app-bar-container .barcode-scanner {
     padding: 20px 26px;
-    float: right;
+    float: left;
     position: absolute;
     background: url(../images/icons/barcode-search.svg) no-repeat 50% 50%; }
 

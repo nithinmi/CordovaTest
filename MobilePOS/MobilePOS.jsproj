@@ -931,7 +931,6 @@
     <TypeScriptCompile Include="scripts\platformOverrides.ts" />
     <Content Include="css\index.css" />
     <Content Include="packages.config" />
-    <Content Include="res\data\products.json" />
     <Content Include="res\icons\android\icon-36-ldpi.png" />
     <Content Include="res\icons\android\icon-48-mdpi.png" />
     <Content Include="res\icons\android\icon-72-hdpi.png" />
