@@ -19,6 +19,12 @@ module MobilePOS {
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
 
+            window.StatusBar.overlaysWebView(false);
+            window.StatusBar.backgroundColorByName("black");
+            window.StatusBar.styleBlackOpaque();
+            
+
+            // checking 3g/wifi connection
             checkConnection();
 
             document.getElementById("devicePlatform").innerHTML = " Platform: " + device.platform;
@@ -188,10 +194,23 @@ module MobilePOS {
                 accept: 'version_1.0',
                 url: 'http://192.168.193.197/wholesaleapi/Payments/?requestPersonId=28946&requestCustomerId=3681',
                 success: function (data) {
-                    notificationAlert("Reference No: " + JSON.stringify(data).substr(24, 3), "Payment Accepted");
+                    setTimeout(function () {
+                        $('.loader').hide();
+                        notificationAlert("Reference No: " + JSON.stringify(data).substr(24, 3), "Payment Accepted");
+                    }, 2000);
                 },
                 error: function () {
-                    notificationAlert("Payment was not successful!", "Error");
+                    setTimeout(function () {
+                        $('.loader').hide();
+                        notificationAlert("Payment was not successful!", "Error");
+                    }, 2000);
+                    
+                },
+                beforeSend: function () {
+                    $('.loader').show()
+
+                },
+                complete: function () {
                 }
             }); 
         }
@@ -207,7 +226,7 @@ module MobilePOS {
             states[Connection.CELL_4G] = 'Cell 4G';
             states[Connection.CELL] = 'Cell Generic';
             states[Connection.NONE] = 'No Network';
-            notificationAlert("Connection detected: " + states[networkState], "Info");
+            notificationAlert("Detected: " + states[networkState], "Network Connection");
         }
 
 

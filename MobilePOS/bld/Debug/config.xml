@@ -5,11 +5,15 @@
   <author href="http://cordova.io" email="dev@cordova.apache.org">Apache Cordova Team</author>
   <content src="index.html" />
   <access origin="*" />
-  
   <preference name="SplashScreen" value="screen" />
-  <preference name="SplashScreenDelay" value="6000" />
+  <preference name="SplashScreenDelay" value="2000" />
 
-  <preference name="Fullscreen" value="false" />
+  <!--<preference name="StatusBarOverlaysWebView" value="false" />
+  <preference name="ios-statusbarstyle" value="black-opaque" />-->
+
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="UIWebViewBounce" value="false" />
+
 
   <preference name="windows-target-version" value="8.0" />
   <preference name="windows-phone-target-version" value="8.1" />
@@ -22,6 +26,7 @@
   <vs:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
   <vs:plugin name="org.apache.cordova.network-information" version="0.2.12" />
   <vs:plugin name="org.apache.cordova.contacts" version="0.2.13" />
+  <vs:plugin name="org.apache.cordova.statusbar" version="0.1.8" />
   <vs:platformSpecificValues />
 
   <platform name="android">
@@ -42,7 +47,7 @@
     <!-- iPad -->
     <icon src="res/icons/ios/icon-76.png" width="76" height="76" />
     <icon src="res/icons/ios/icon-76-2x.png" width="152" height="152" />
-        
+
     <!-- iOS 6.1 -->
     <!-- Spotlight Icon -->
     <icon src="res/icons/ios/icon-40.png" width="40" height="40" />
@@ -61,8 +66,20 @@
 
   <platform name="ios">
     <!-- images are determined by width and height. The following are supported -->
+    <splash src="res/screens/ios/screen-iphone-portrait.png" width="320" height="480"/>
+    <splash src="res/screens/ios/screen-iphone-portrait-2x.png" width="640" height="960"/>
+
     <splash src="res/screens/ios/screen-ipad-portrait.png" width="768" height="1024"/>
+    <splash src="res/screens/ios/screen-ipad-landscape-2x.png" width="1536" height="2048"/>
+
     <splash src="res/screens/ios/screen-ipad-landscape.png" width="1024" height="768"/>
+    <splash src="res/screens/ios/screen-ipad-landscape-2x.png" width="2048" height="1536"/>
+
+    <splash src="res/screens/ios/screen-iphone-568h-2x.png" width="640" height="1136"/>
+    <splash src="res/screens/ios/screen-iphone-portrait-667h.png" width="750" height="1334"/>
+
+    <splash src="res/screens/ios/screen-iphone-portrait-736h.png" width="1242" height="2208"/>
+    <splash src="res/screens/ios/screen-iphone-landscape-736h.png" width="2208" height="1242"/>
   </platform>
 
 

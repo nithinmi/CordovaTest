@@ -19,6 +19,12 @@ module MobilePOS {
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
 
+            window.StatusBar.overlaysWebView(false);
+            window.StatusBar.backgroundColorByName("black");
+            window.StatusBar.styleBlackOpaque();
+            
+
+            // checking 3g/wifi connection
             checkConnection();
 
             document.getElementById("devicePlatform").innerHTML = " Platform: " + device.platform;
@@ -220,7 +226,7 @@ module MobilePOS {
             states[Connection.CELL_4G] = 'Cell 4G';
             states[Connection.CELL] = 'Cell Generic';
             states[Connection.NONE] = 'No Network';
-            notificationAlert("Connection detected: " + states[networkState], "Info");
+            notificationAlert("Detected: " + states[networkState], "Network Connection");
         }
 
 
