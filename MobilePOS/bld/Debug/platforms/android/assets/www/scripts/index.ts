@@ -23,6 +23,12 @@ module MobilePOS {
             window.StatusBar.backgroundColorByName("black");
             window.StatusBar.styleBlackOpaque();
             
+            navigator.splashscreen.show();
+
+            setTimeout(function () {
+                navigator.splashscreen.hide();
+            }, 5000);
+
 
             // checking 3g/wifi connection
             checkConnection();
@@ -226,7 +232,7 @@ module MobilePOS {
             states[Connection.CELL_4G] = 'Cell 4G';
             states[Connection.CELL] = 'Cell Generic';
             states[Connection.NONE] = 'No Network';
-            notificationAlert("Detected: " + states[networkState], "Network Connection");
+            notificationAlert(states[networkState], "Network Connection");
         }
 
 

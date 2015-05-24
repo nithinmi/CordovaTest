@@ -208,6 +208,7 @@ C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.device \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.dialogs \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.network-information \
+C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.splashscreen \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.statusbar \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.vibration \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner\www \
@@ -231,6 +232,8 @@ C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www\Connection.js \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www\network.js \
+C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.splashscreen\www \
+C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.splashscreen\www\splashscreen.js \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.statusbar\www \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.statusbar\www\statusbar.js \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\assets\www\plugins\org.apache.cordova.vibration\www \

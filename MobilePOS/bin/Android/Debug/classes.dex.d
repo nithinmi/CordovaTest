@@ -45,6 +45,7 @@ C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification.class \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager$1.class \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager.class \
+C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\ant-build\classes\org\apache\cordova\splashscreen\SplashScreen.class \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\ant-build\classes\org\apache\cordova\statusbar\StatusBar$1.class \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\ant-build\classes\org\apache\cordova\statusbar\StatusBar$2.class \
 C:\Users\arinjoyb\Desktop\TRY\CordovaTest\MobilePOS\bld\Debug\platforms\android\ant-build\classes\org\apache\cordova\statusbar\StatusBar$3.class \
