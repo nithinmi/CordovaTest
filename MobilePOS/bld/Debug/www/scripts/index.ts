@@ -25,28 +25,30 @@ module MobilePOS {
             
             navigator.splashscreen.show();
 
-            //setTimeout(function () {
-            //    navigator.splashscreen.hide();
-            //}, 3000);
+            setTimeout(function () {
+                navigator.splashscreen.hide();
+
+                // checking 3g/wifi connection
+                checkConnection();
+
+                document.getElementById("devicePlatform").innerHTML = " Platform: " + device.platform;
+                document.getElementById("deviceModel").innerHTML = "Model: " + device.model;
+
+                navigator.geolocation.getCurrentPosition(onGPSuccess, onGPError);
 
 
-            // checking 3g/wifi connection
-            checkConnection();
 
-            document.getElementById("devicePlatform").innerHTML = " Platform: " + device.platform;
-            document.getElementById("deviceModel").innerHTML =  "Model: " + device.model;
+                document.getElementById("scanBtn").addEventListener("click", scanAndShow);
 
-            navigator.geolocation.getCurrentPosition(onGPSuccess, onGPError);
+                document.getElementById("btnCheckOut").addEventListener("click", processPayment);
 
-            
-
-            document.getElementById("scanBtn").addEventListener("click", scanAndShow);
-
-            document.getElementById("btnCheckOut").addEventListener("click", processPayment);
-
-            document.getElementById("customerList").addEventListener("click", displayContacts);
+                document.getElementById("customerList").addEventListener("click", displayContacts);
 
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
+
+            }, 3000);
+
+          
         }
 
         function displayContacts() {

@@ -26,22 +26,22 @@ var MobilePOS;
 
             setTimeout(function () {
                 navigator.splashscreen.hide();
-            }, 5000);
 
-            // checking 3g/wifi connection
-            checkConnection();
+                // checking 3g/wifi connection
+                checkConnection();
 
-            document.getElementById("devicePlatform").innerHTML = " Platform: " + device.platform;
-            document.getElementById("deviceModel").innerHTML = "Model: " + device.model;
+                document.getElementById("devicePlatform").innerHTML = " Platform: " + device.platform;
+                document.getElementById("deviceModel").innerHTML = "Model: " + device.model;
 
-            navigator.geolocation.getCurrentPosition(onGPSuccess, onGPError);
+                navigator.geolocation.getCurrentPosition(onGPSuccess, onGPError);
 
-            document.getElementById("scanBtn").addEventListener("click", scanAndShow);
+                document.getElementById("scanBtn").addEventListener("click", scanAndShow);
 
-            document.getElementById("btnCheckOut").addEventListener("click", processPayment);
+                document.getElementById("btnCheckOut").addEventListener("click", processPayment);
 
-            document.getElementById("customerList").addEventListener("click", displayContacts);
-            // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
+                document.getElementById("customerList").addEventListener("click", displayContacts);
+                // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
+            }, 3000);
         }
 
         function displayContacts() {
