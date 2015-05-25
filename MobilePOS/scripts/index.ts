@@ -46,7 +46,7 @@ module MobilePOS {
 
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
 
-            }, 3000);
+            }, 1500);
 
           
         }

@@ -41,7 +41,7 @@ var MobilePOS;
 
                 document.getElementById("customerList").addEventListener("click", displayContacts);
                 // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
-            }, 3000);
+            }, 1500);
         }
 
         function displayContacts() {
